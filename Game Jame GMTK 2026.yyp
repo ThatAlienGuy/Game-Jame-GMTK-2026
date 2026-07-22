@@ -34,8 +34,10 @@
   "name":"Game Jame GMTK 2026",
   "resources":[
     {"id":{"name":"O_player","path":"objects/O_player/O_player.yy",},},
+    {"id":{"name":"O_wall","path":"objects/O_wall/O_wall.yy",},},
     {"id":{"name":"R_1","path":"rooms/R_1/R_1.yy",},},
     {"id":{"name":"S_player","path":"sprites/S_player/S_player.yy",},},
+    {"id":{"name":"S_wall","path":"sprites/S_wall/S_wall.yy",},},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
   ],
   "resourceType":"GMProject",

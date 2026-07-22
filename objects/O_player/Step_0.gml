@@ -1,35 +1,52 @@
-key_up = keyboard_check(ord("W"));
-key_down = keyboard_check(ord("S"));
-key_left = keyboard_check(ord("A"));
-key_right = keyboard_check(ord("D"));
-key_restart = keyboard_check_pressed(ord("R"));
+
+//Inputs
+
+key_left = keyboard_check (vk_left) or keyboard_check(ord("A"));
+key_right = keyboard_check (vk_right) or keyboard_check(ord("D"));
+key_up = keyboard_check (vk_up) or keyboard_check(ord("W"));
+key_down = keyboard_check (vk_down) or keyboard_check(ord("S"));
 
 
-if(key_up - key_down = 1 )
+
+//Movment
+
+var hmove = key_right - key_left;
+var vmove = key_down - key_up;
+
+
+if (hmove != 0)
 {
-	y = y - movespeed ;
-
+	hsp = hmove * walksp
 }
-else if(key_up - key_down = -1 )
+hsp = 0.7 * hsp;
+
+if (vmove != 0)
 {
-	y = y + movespeed ;
-
+	vsp = vmove * walksp
 }
+vsp = 0.7 * vsp;
 
-if(key_right - key_left = -1 )
+//collisions
+
+if (place_meeting(x+hsp,y,O_wall))
 {
-	x = x - movespeed ;
-
+ while (!place_meeting(x+sign(hsp),y,O_wall))
+ {
+	  	  x = x + sign(hsp);
+ }
+ hsp = 0;
 }
-else if(key_right - key_left = 1 )
+
+x = x + hsp;
+
+
+if (place_meeting(x,y+vsp,O_wall))
 {
-	x = x + movespeed ;
-
+ while (!place_meeting(x,y+sign(vsp),O_wall))
+ {
+	  	  y = y + sign(vsp);
+ }
+ vsp = 0;
 }
 
-
-
-if key_restart{
-	x = room_width / 2
-	y = room_height / 2
-}
+y = y + vsp;

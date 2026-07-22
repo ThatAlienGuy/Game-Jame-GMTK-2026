@@ -1,1 +1,3 @@
-movespeed =10;
+hsp = 0;
+vsp = 0;
+walksp = 15;
