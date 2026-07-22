@@ -9,7 +9,10 @@
     "name":"Objects",
     "path":"folders/Level/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"O_solid",
+    "path":"objects/O_solid/O_solid.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

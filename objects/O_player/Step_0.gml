@@ -28,9 +28,9 @@ vsp = 0.7 * vsp;
 
 //collisions
 
-if (place_meeting(x+hsp,y,O_wall))
+if (place_meeting(x+hsp,y,O_solid))
 {
- while (!place_meeting(x+sign(hsp),y,O_wall))
+ while (!place_meeting(x+sign(hsp),y,O_solid))
  {
 	  	  x = x + sign(hsp);
  }
@@ -40,9 +40,9 @@ if (place_meeting(x+hsp,y,O_wall))
 x = x + hsp;
 
 
-if (place_meeting(x,y+vsp,O_wall))
+if (place_meeting(x,y+vsp,O_solid))
 {
- while (!place_meeting(x,y+sign(vsp),O_wall))
+ while (!place_meeting(x,y+sign(vsp),O_solid))
  {
 	  	  y = y + sign(vsp);
  }
