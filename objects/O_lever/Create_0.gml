@@ -1,1 +1,1 @@
-index = 0
+touching = false

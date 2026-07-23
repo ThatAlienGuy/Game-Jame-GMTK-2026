@@ -1,1 +1,2 @@
-index = 0
+xpos = x
+ypos = y
