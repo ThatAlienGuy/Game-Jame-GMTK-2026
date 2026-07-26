@@ -1,4 +1,4 @@
-if opened = true image_index = 1 else if opened = false image_index = 0
+//if opened = true image_index = 1 else if opened = false image_index = 0
 
 
 
