@@ -16,9 +16,9 @@ with (O_sliding_door)
 if place_meeting(x,y,O_player) and keyboard_check_pressed(vk_control) and uses > 0
 {
 	uses--
-	if image_index = 0 
+	if sprite_index = S_lever_1
 	{
-		image_index = 1
+		image_index = S_lever_2
 	}
-	else image_index = 0
+	else image_index = S_lever_1
 }

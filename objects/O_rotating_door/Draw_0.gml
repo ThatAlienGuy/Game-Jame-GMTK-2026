@@ -1,3 +1,5 @@
+//draw_self()
+
 var segment_width = 64;
 
 // Normalize angle to 0, 90, 180, 270
@@ -26,18 +28,18 @@ switch (normalized_angle)
         for (var i = 0; i < image_xscale; i++)
         {
             var draw_x = x - (i * segment_width);
-            if (i == 0) draw_sprite_ext(S_gate_end, 0, draw_x, y, -1, 1, 0, c_white, 1);
-            else if (i == image_xscale - 1) draw_sprite(S_gate_end, 0, draw_x - segment_width, y);
-            else draw_sprite_ext(S_gate_middle, 0, draw_x, y, -1, 1, 0, c_white, 1);
+            if (i == 0) draw_sprite_ext(S_gate_end, 0, draw_x, y-64, -1, 1, 0, c_white, 1);
+            else if (i == image_xscale - 1) draw_sprite(S_gate_end, 0, draw_x - segment_width, y-64);
+            else draw_sprite_ext(S_gate_middle, 0, draw_x, y-64, -1, 1, 0, c_white, 1);
         }
         break;
 
     case 90: // Up / -Y (90 deg)
         for (var i = 0; i < image_xscale; i++)
         {
-            var draw_y = y - (i * segment_width);
-            if (i == 0) draw_sprite_ext(S_vgate_end, 0, x, draw_y,1,-1,0,c_white,1);
-            else if (i == image_xscale - 1) draw_sprite_ext(S_vgate_end, 0, x, draw_y + segment_width, 1, 1, 0, c_white, 1);
+            var draw_y = y - (i * segment_width)-segment_width;
+            if (i == 0) draw_sprite(S_vgate_end, 0, x, draw_y);
+            else if (i == image_xscale - 1) draw_sprite_ext(S_vgate_end, 0, x, draw_y + segment_width, 1, -1, 0, c_white, 1);
             else draw_sprite(S_vgate_middle, 0, x, draw_y);
         }
         break;
@@ -46,9 +48,9 @@ switch (normalized_angle)
         for (var i = 0; i < image_xscale; i++)
         {
             var draw_y = y + (i * segment_width);
-            if (i == 0) draw_sprite(S_vgate_end, 0, x, draw_y);
-            else if (i == image_xscale - 1) draw_sprite_ext(S_vgate_end, 0, x, draw_y + segment_width, 1, -1, 0, c_white, 1);
-            else draw_sprite(S_vgate_middle, 0, x, draw_y);
+            if (i == 0) draw_sprite(S_vgate_end, 0, x - segment_width, draw_y);
+            else if (i == image_xscale - 1) draw_sprite_ext(S_vgate_end, 0, x - segment_width, draw_y + segment_width, 1, -1, 0, c_white, 1);
+            else draw_sprite(S_vgate_middle, 0, x - segment_width, draw_y);
         }
         break;
 }

@@ -1,34 +1,66 @@
-// Remove draw_self() if you don't want the default sprite drawing underneath
-// draw_self();
-
 var segment_width = 64;
 
-// Single segment fallback (optional, if gate can be only 1 block wide)
-if (image_xscale <= 1) 
+// --- HORIZONTAL GATE ---
+if (image_yscale == 1)
 {
-    draw_sprite(S_gate_end, 0, x, y);
-    exit;
+    // Single-segment gate fallback
+    if (image_xscale <= 1) 
+    {
+        draw_sprite(S_gate_end, 0, x, y);
+        exit;
+    }
+
+    // Multi-segment gate
+    for (var i = 0; i < image_xscale; i++)
+    {
+        var draw_x = x + (i * segment_width);
+
+        if (i == 0)
+        {
+            // Left end piece
+            draw_sprite(S_gate_end, 0, draw_x, y);
+        }
+        else if (i == image_xscale - 1)
+        {
+            // Right end piece (flipped horizontally, shifted for top-left origin)
+            draw_sprite_ext(S_gate_end, 0, draw_x + segment_width, y, -1, 1, 0, c_white, 1);
+        }
+        else
+        {
+            // Middle piece
+            draw_sprite(S_gate_middle, 0, draw_x, y);
+        }
+    }
 }
-
-// Multi-segment gate
-for (var i = 0; i < image_xscale; i++)
+// --- VERTICAL GATE ---
+else
 {
-    var draw_x = x + (i * segment_width);
+    // Single-segment vertical fallback
+    if (image_yscale <= 1)
+    {
+        draw_sprite(S_vgate_end, 0, x, y);
+        exit;
+    }
 
-    if (i == 0)
+    // Multi-segment vertical gate
+    for (var i = 0; i < image_yscale; i++)
     {
-        // Left end piece
-        draw_sprite(S_gate_end, 0, draw_x, y);
-    }
-    else if (i == image_xscale - 1)
-    {
-        // Right end piece (flipped horizontally)
-        // Add segment_width to compensate for the top-left origin flip
-        draw_sprite_ext(S_gate_end, 0, draw_x + segment_width, y, -1, 1, 0, c_white, 1);
-    }
-    else
-    {
-        // Middle piece(s)
-        draw_sprite(S_gate_middle, 0, draw_x, y);
+        var draw_y = y + (i * segment_width);
+
+        if (i == 0)
+        {
+            // Top end piece
+            draw_sprite(S_vgate_end, 0, x, draw_y);
+        }
+        else if (i == image_yscale - 1)
+        {
+            // Bottom end piece (flipped vertically, shifted for top-left origin)
+            draw_sprite_ext(S_vgate_end, 0, x, draw_y + segment_width, 1, -1, 0, c_white, 1);
+        }
+        else
+        {
+            // Middle piece
+            draw_sprite(S_vgate_middle, 0, x, draw_y);
+        }
     }
 }

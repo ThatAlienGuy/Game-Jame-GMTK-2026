@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"S_lever",
-    "path":"sprites/S_lever/S_lever.yy",
+    "name":"S_lever_1",
+    "path":"sprites/S_lever_1/S_lever_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,
