@@ -13,10 +13,7 @@
     "name":"Objects",
     "path":"folders/Level/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"O_solid",
-    "path":"objects/O_solid/O_solid.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,7 +29,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"index","filters":[],"listItems":[],"multiselect":false,"name":"index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
-    {"$GMObjectProperty":"v2","%Name":"rot","filters":[],"listItems":[],"multiselect":false,"name":"rot","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"rot","filters":[],"listItems":[],"multiselect":false,"name":"rot","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"90","varType":1,},
     {"$GMObjectProperty":"v2","%Name":"reversible","filters":[],"listItems":[],"multiselect":false,"name":"reversible","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
     {"$GMObjectProperty":"v2","%Name":"rotmax","filters":[],"listItems":[],"multiselect":false,"name":"rotmax","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
     {"$GMObjectProperty":"v2","%Name":"rotmin","filters":[],"listItems":[],"multiselect":false,"name":"rotmin","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
